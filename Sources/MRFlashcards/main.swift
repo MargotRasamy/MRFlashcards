@@ -9,13 +9,43 @@ HeliumLogger.use()
 
 // On importe le fichier CSV en string avec la fonction String()
 //on lui passe en argument contentSOf : URL() pour recuperer le chemin du csv
+
  let csvImported = try? String(contentsOf : URL(fileURLWithPath:"./Sources/MRFlashcards/assets/csv/csv1.csv")) 
+
  // on fait un print pour verifier ce qu'il retourne et si le fichier est nil : avertissement
+
   print(csvImported ?? "You did not put your CSV files in the folder")
 
 
-let personne = MRsubject()
-print(personne.questions)
+//STEP 1
+
+//si le csv importe n'est pas nil
+if let csv: String = csvImported{
+
+  let nouvelleMatiere = MRsubject()
+  print(nouvelleMatiere.convertStringToTab(stringToConvert: csvImported!))
+  print(nouvelleMatiere.questions)
+  
+
+
+
+
+
+
+
+
+
+}
+
+
+
+//si le csv importe est nil
+else {
+  print("i am nil because you did not put your CSV files in the folder")
+}
+
+
+
 
 
 
