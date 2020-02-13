@@ -14,6 +14,12 @@ HeliumLogger.use()
   print(csvImported ?? "You did not put your CSV files in the folder")
 
 
+let personne = MRsubject()
+print(personne.questions)
+
+
+
+/* TABLEAU
 
 if let csv: String = csvImported{
 
@@ -75,6 +81,22 @@ else {
     // ajouter les colonnes dans le resultat final
   //retourner le resultat final
 // }
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let router = Router()
