@@ -68,7 +68,7 @@ class MRsubject {
     }
 
 
-    func extractQuestions(csvConvertedAllElements : [String]) -> [String] {
+    func extractQuestions(csvConvertedAllElements : [String]) -> ([String], [String]) {
          var temoin : Bool = false
          var questions : [String] = []
          var responses : [String] = []
@@ -88,9 +88,9 @@ class MRsubject {
       }
       self.questions = questions
       self.responses = responses
-      print(self.questions)
-      print(self.responses)
-      return self.questions
+      // print(self.questions)
+      // print(self.responses)
+      return (self.questions, self.responses)
 
     }
 

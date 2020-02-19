@@ -32,6 +32,8 @@ if let csv: String = csvImported{
 
   nouvelleMatiere.extractAllElements(csvConverted : nouvelleMatiere.csvConverted)
   nouvelleMatiere.extractQuestions(csvConvertedAllElements : nouvelleMatiere.allElements)
+  print(nouvelleMatiere.responses)
+  print(nouvelleMatiere.questions)
   
  
   
