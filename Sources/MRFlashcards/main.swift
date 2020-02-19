@@ -4,6 +4,10 @@ import Foundation
 import HeliumLogger
 HeliumLogger.use()
 
+// router.all(middleware: [BodyParser(), StaticFileServer(path: "./Public")])
+// router.add(templateEngine: StencilTemplateEngine())
+
+
 
 
 
@@ -23,8 +27,13 @@ HeliumLogger.use()
 if let csv: String = csvImported{
 
   let nouvelleMatiere = MRsubject()
-  print(nouvelleMatiere.convertStringToTab(stringToConvert: csvImported!))
-  print(nouvelleMatiere.questions)
+  nouvelleMatiere.convertStringToTab(stringToConvert: csvImported!)
+  print(nouvelleMatiere.csvConverted)
+
+  nouvelleMatiere.extractAllElements(csvConverted : nouvelleMatiere.csvConverted)
+  nouvelleMatiere.extractQuestions(csvConvertedAllElements : nouvelleMatiere.allElements)
+  
+ 
   
 
 
@@ -49,95 +58,32 @@ else {
 
 
 
-/* TABLEAU
-
-if let csv: String = csvImported{
-
-  // fonction qui prend le texte du fichier et renvoit le tableau contenant les colonnes du CSV
-
-  func convertStringToTab(stringToConvert: String) -> [[String]]{
-    // creer le tableau de tableau qui sera retourne a la fin
-    var csvTab : [[String]] = []
-    // decouper le texte en lignes
-    // for letter in stringToConvert! {
-
-      //on decoupe le tableau en lignes avec CharacterSet.newlines car \n unix, \r mac et \r \n windows
-      let converted: [String] = stringToConvert.components(separatedBy : CharacterSet.newlines)
-      // for i in converted {
-
-      // let converted2: [String] = i.components(separatedBy : ";")
-      csvTab.append(converted)
-      //}
-      return csvTab
-      
-
-//       let str = "Swift 4.0 is the best version of Swift to learn, so if you're starting fresh you should definitely learn Swift 4.0."
-// let replaced = str.replacingOccurrences(of: "4.0", with: "5.0")
-
-   //}
-
-  }
-
-  let hello:[[String]] = convertStringToTab(stringToConvert: csvImported!)
-  print(hello)
-
-
-
-
-}
-
-
-//cas du nil
-else {
-  print("i am nil because you did not put your CSV files in the folder")
-}
-
-  // for a in csvImported {
-  //   print("hey")
-  // }
-
-
-
-
-
-
-// fonction qui prend le texte du fichier et renvoit le tableau contenant les colonnes du CSV
-// func csvArray(csv: String) -> [[String]] {
-  // creer le tableau de tableau qui sera retourne a la fin
-  // decouper le texte en lignes
-  // pour chaque ligne
-    // decouper la ligne en colonne avec le caractere ";"
-    // verifier qu'on a le bon nombre de colonnes
-    // ajouter les colonnes dans le resultat final
-  //retourner le resultat final
-// }
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let router = Router()
 
-router.all(middleware: BodyParser())
+
+router.all(middleware: [BodyParser(), StaticFileServer(path: "./Public")])
+router.add(templateEngine: StencilTemplateEngine())
+
+
 
  router.get("/") { request, response, next in
-     //response.send(csvImported ?? "hey")
-     response.send("hey")
+    response.send(csvImported ?? "hey")
+     
+
+    // if let body = request.body?.asURLEncoded {
+          
+    //            try response.render("Home.stencil", context: body)
+    //     } 
+    //     else {
+    //        response.status(.notFound)
+    //    }
+
+
+    //  try response.render("Home.stencil", context: ["messages" : body ])
      next()
  }
+
 
  Kitura.addHTTPServer(onPort: 8080, with: router)
  Kitura.run()
