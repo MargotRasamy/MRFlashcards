@@ -1,3 +1,7 @@
 body {
-    background-color: lightpink;
+    background-color: #1F1F1F;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
