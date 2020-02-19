@@ -70,19 +70,19 @@ router.add(templateEngine: StencilTemplateEngine())
 
 
  router.get("/") { request, response, next in
-    response.send(csvImported ?? "hey")
+    // response.send(csvImported ?? "hey")
      
+        var hello : String = ""
 
-    // if let body = request.body?.asURLEncoded {
-          
-    //            try response.render("Home.stencil", context: body)
-    //     } 
-    //     else {
-    //        response.status(.notFound)
-    //    }
+    if let body = request.body?.asURLEncoded {
+        } 
+        else {
+           response.status(.notFound)
+       }
+    try response.render("Home.stencil", context: [ hello  : ""] )
 
 
-    //  try response.render("Home.stencil", context: ["messages" : body ])
+     
      next()
  }
 
