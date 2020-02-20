@@ -1,7 +1,7 @@
 import Kitura
 import KituraStencil
 import Foundation
-struct Card {
+struct Card : Codable {
     var questionRecto : String
     var responseVerso : String
 }

@@ -4,8 +4,6 @@ import Foundation
 import HeliumLogger
 HeliumLogger.use()
 
-// router.all(middleware: [BodyParser(), StaticFileServer(path: "./Public")])
-// router.add(templateEngine: StencilTemplateEngine())
 
 
 
@@ -64,8 +62,6 @@ else {
 
 
 let router = Router()
-
-
 router.all(middleware: [BodyParser(), StaticFileServer(path: "./Public")])
 router.add(templateEngine: StencilTemplateEngine())
 
