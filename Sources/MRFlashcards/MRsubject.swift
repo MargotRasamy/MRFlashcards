@@ -5,7 +5,7 @@ import Foundation
 //une classe pour chaque matiere/ deck
 class MRsubject {
     var csvConverted : [[String]] // [["question1, Question2"]]
-    var deck : [Card] 
+    var deck : [MRCard] 
 
 //on cree le constructeur de la classe
     init() {
@@ -17,7 +17,7 @@ class MRsubject {
 
 
 // La fonction principale a utiliser pour obtenir un deck a partir d'une string de csv
-    func createDeckFromCsv(stringToConvert: String) -> [Card]{
+    func createDeckFromCsv(stringToConvert: String) -> [MRCard]{
       //on decoupe le tableau en lignes avec CharacterSet.newlines car \n unix, \r mac et \r \n windows
       var lines: [String] = stringToConvert.components(separatedBy : CharacterSet.newlines)
       //filtrer le tableau en supprimant les string vide ""
@@ -48,9 +48,9 @@ class MRsubject {
 
 
 //cette fonction retourne les cartes en structure
-    func extractCards(csvConverted : [[String]]) -> [Card] {
+    func extractCards(csvConverted : [[String]]) -> [MRCard] {
       var temoin : Bool = false
-      var card = Card(questionRecto : "", responseVerso : "")
+      var card = MRCard(questionRecto : "", responseVerso : "")
      
       for i in csvConverted {
           for j in i {

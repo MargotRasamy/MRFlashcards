@@ -4,12 +4,40 @@ import Foundation
 import HeliumLogger
 HeliumLogger.use()
 
+var matieresNames : [String] = []
+var matiereURLS : [String] = []
+
+let csvFolder = try FileManager.default.contentsOfDirectory(atPath: "./Sources/MRFlashcards/assets/csv")
+
+//boucle pour les matieres dans le dossier
+for csv in csvFolder {
+  var initPath : String = "./Sources/MRFlashcards/assets/csv/"
+  
+  matiereURLS.append(initPath + csv)
+  matieresNames.append(csv)
+}
+var matiereTab : [String] = []
+for matiere in matieresNames {
+  var hello = matiere.replacingOccurrences(of: ".csv", with: "")
+  
+  matiereTab.append(hello)
+}
+
+print(matiereTab)
+print(matiereURLS)
+
+
+
+
 
 // On importe le fichier CSV en string avec la fonction String()
 //on lui passe en argument contentSOf : URL() pour recuperer le chemin du csv
 let csvImported = try? String(contentsOf : URL(fileURLWithPath:"./Sources/MRFlashcards/assets/csv/csv1.csv")) 
 // on fait un print pour verifier ce qu'il retourne et si le fichier est nil : avertissement
   print(csvImported ?? "You did not put your CSV files in the folder")
+
+
+  
 
 
 //STEP 1
