@@ -3,13 +3,11 @@ import KituraStencil
 import Foundation
 
 //une classe pour chaque matiere/ deck
-class MRsubject {
-    var csvConverted : [[String]] // [["question1, Question2"]]
+class MRSubject {
     var deck : [MRCard] 
 
 //on cree le constructeur de la classe
     init() {
-        self.csvConverted = [[]]
         self.deck = []
     }
 
@@ -22,23 +20,23 @@ class MRsubject {
       var lines: [String] = stringToConvert.components(separatedBy : CharacterSet.newlines)
       //filtrer le tableau en supprimant les string vide ""
         lines = lines.filter { $0 != "" }
-        var matiere : [[String]] = []
+        var cardPair : [[String]] = []
         // on boucle sur le tableau converti
         for i in lines {
           //on separe chaque element du tableau en colomne, c'est-a-dire par ";"
           var column : [String] = i.components(separatedBy : ";")
           
-          matiere.append(column) 
+          cardPair.append(column) 
           
         }
-        // print(matiere)
+        // print(cardPair)
         
-       csvConverted = matiere
+       
        
       
 
       // self.questions = matiere
-      extractCards(csvConverted : csvConverted)
+      extractCards(csvConverted : cardPair)
       print(deck[5].responseVerso)
       print(deck)
       return deck

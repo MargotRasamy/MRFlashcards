@@ -5,29 +5,21 @@ import HeliumLogger
 HeliumLogger.use()
 
 var subjectNames : [String] = []
-
-
-func importDatasFromCsv(CsvFolderPath : String) -> 
-// csv Folder est un tableau avec les noms des fichiers en string
-let csvFolder = try FileManager.default.contentsOfDirectory(atPath: "./Sources/MRFlashcards/assets/csv")
-
-
-for csv in csvFolder {
-  var subject = csv.replacingOccurrences(of: ".csv", with: "")
-  
-  subjectNames.append(subject)
-}
-
-print(subjectNames)
-
-
 var arrayOfCsvDatas : [String] = []
 
+
+// csv Folder est un tableau avec les noms des fichiers en string
+let csvFolder = try FileManager.default.contentsOfDirectory(atPath: "./Sources/MRFlashcards/assets/csv")
+//On boucle sur le dossier de csv pour avoir les noms des matieres et leurs chemins
 for csv in csvFolder {
+  var subject : String = csv.replacingOccurrences(of: ".csv", with: "")
+  subjectNames.append(subject)
   var csvData : String = try String(contentsOf : URL(fileURLWithPath:"./Sources/MRFlashcards/assets/csv/" + csv))
   arrayOfCsvDatas.append(csvData)
 }
+print(subjectNames)
 print(arrayOfCsvDatas)
+
 
 
 
@@ -46,7 +38,7 @@ let csvImported = try? String(contentsOf : URL(fileURLWithPath:"./Sources/MRFlas
 //si le csv importe n'est pas nil
 if let csv: String = csvImported{
 
-  let nouvelleMatiere = MRsubject()
+  let nouvelleMatiere = MRSubject()
   nouvelleMatiere.createDeckFromCsv(stringToConvert: csvImported!)
 
   
