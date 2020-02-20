@@ -28,12 +28,14 @@ if let csv: String = csvImported{
 
   let nouvelleMatiere = MRsubject()
   nouvelleMatiere.convertStringToTab(stringToConvert: csvImported!)
-  print(nouvelleMatiere.csvConverted)
+  // print(nouvelleMatiere.csvConverted)
 
   nouvelleMatiere.extractAllElements(csvConverted : nouvelleMatiere.csvConverted)
   nouvelleMatiere.extractQuestions(csvConvertedAllElements : nouvelleMatiere.allElements)
-  print(nouvelleMatiere.responses)
-  print(nouvelleMatiere.questions)
+  // print(nouvelleMatiere.responses)
+  // print(nouvelleMatiere.questions)
+
+  nouvelleMatiere.extractCards(csvConverted : nouvelleMatiere.csvConverted)
   
  
   

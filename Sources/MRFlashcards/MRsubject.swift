@@ -3,6 +3,7 @@ import KituraStencil
 import Foundation
 
 
+
 //une classe pour chaque matiere/ deck
 class MRsubject {
     var rawCsv: String
@@ -10,6 +11,10 @@ class MRsubject {
     var allElements : [String]
     var questions: [String]
     var responses: [String]
+
+//un deck
+    var deck : [Card]
+
 
 
 //on cree le constructeur de la classe
@@ -19,9 +24,10 @@ class MRsubject {
         self.allElements = []
         self.rawCsv = csvImported! // on initialise rawCsv a la chaine du csv importe
         self.csvConverted = [[]]
+        self.deck = []
     }
 
-
+//cette fonction retourne les paires de questions et reponses
     func convertStringToTab(stringToConvert: String) -> [[String]]{
     
 
@@ -55,6 +61,11 @@ class MRsubject {
 
 
 
+
+
+
+
+//cette fonction retourne TOUS LES ELEMENTS A LA SUITE
     func extractAllElements(csvConverted : [[String]]) -> [String] {
       var allElements : [String] = []
       for i in csvConverted {
@@ -68,6 +79,7 @@ class MRsubject {
     }
 
 
+//Cette fonction retourne un deck questions et un deck reponses
     func extractQuestions(csvConvertedAllElements : [String]) -> ([String], [String]) {
          var temoin : Bool = false
          var questions : [String] = []
@@ -92,6 +104,39 @@ class MRsubject {
       // print(self.responses)
       return (self.questions, self.responses)
 
+    }
+
+
+//cette fonction retourne les cartes en structure
+    func extractCards(csvConverted : [[String]]) -> [Card] {
+      var temoin : Bool
+      var card = Card(questionRecto : "", responseVerso : "")
+          temoin = false
+      for i in csvConverted {
+          for j in i {
+
+            if temoin == false {
+              card.questionRecto = j
+              
+              
+              temoin = true
+            }
+            else {
+              card.responseVerso = j
+
+              self.deck.append(card)
+            
+              
+              temoin = false
+            }
+
+          }
+      }
+
+
+      print(deck)
+      //on retourne deck
+      return self.deck
     }
 
 }
