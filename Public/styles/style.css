@@ -4,4 +4,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Text-Regular";
+}
+
+H1,H2,H3 {
+    font-family: "Titles-Bold";
+}
+
+/* Fonts */
+
+/* Titles fonts */
+@font-face {
+    font-family: "Titles-Bold";
+    src: url("/fonts/Sacramento/Sacramento-Regular.ttf");
+}
+
+
+/* Text fonts */
+@font-face {
+    font-family: "Text-Bold";
+    src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: "Text-Regular";
+    src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Text-Light";
+    src: url("/fonts/Montserrat/Montserrat-Light.ttf");
 }
