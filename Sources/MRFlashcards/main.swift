@@ -5,41 +5,11 @@ import HeliumLogger
 HeliumLogger.use()
 
 
-
-
-
-
-// On importe le fichier CSV en string avec la fonction String()
-//on lui passe en argument contentSOf : URL() pour recuperer le chemin du csv
-let csvImported = try? String(contentsOf : URL(fileURLWithPath:"./Sources/MRFlashcards/assets/csv/csv1.csv")) 
-// on fait un print pour verifier ce qu'il retourne et si le fichier est nil : avertissement
-  print(csvImported ?? "You did not put your CSV files in the folder")
-
-
-  
-
+  let nouveauxQuiz = MRSubject()
+  nouveauxQuiz.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv")
+print(nouveauxQuiz.allDecks)
 
 //STEP 1
-
-//si le csv importe n'est pas nil
-if let csv: String = csvImported{
-
-  let nouvelleMatiere = MRSubject()
-  nouvelleMatiere.createDeckFromCsv(stringToConvert: csvImported!)
-
-  
- 
-  
-
-
-}
-
-
-
-//si le csv importe est nil
-else {
-  print("i am nil because you did not put your CSV files in the folder")
-}
 
 
 
@@ -54,16 +24,9 @@ router.add(templateEngine: StencilTemplateEngine())
 
 
  router.get("/") { request, response, next in
-    // response.send(csvImported ?? "hey")
+    response.send(nouveauxQuiz.allDecks)
      
-        var hello : String = ""
-
-    if let body = request.body?.asURLEncoded {
-        } 
-        else {
-           response.status(.notFound)
-       }
-    try response.render("Home.stencil", context: [ hello  : ""] )
+       
 
 
      
