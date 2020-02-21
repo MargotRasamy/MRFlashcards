@@ -9,7 +9,11 @@
         <h1>Bienvenue sur Flashcards !</h1>
         <h3> Choisis la matiere que tu veux reviser</h3>
 
-        
+     <div class="decks">
+         {% for deck in decks %}
+            <div class="deck">{{deck.subjectName}} </div>
+        {% endfor %}
+    </div>
         
 
     </section>
