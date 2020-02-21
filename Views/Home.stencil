@@ -4,9 +4,14 @@
     <link href="/styles/style.css" rel="stylesheet">
     </head>
     <body>
+    <section class="decks_board">
+
         <h1>Bienvenue sur Flashcards !</h1>
+        <h3> Choisis la matiere que tu veux reviser</h3>
+
+        
         
 
-
+    </section>
     </body>
 </html>
