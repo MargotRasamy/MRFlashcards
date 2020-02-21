@@ -20,8 +20,12 @@ router.add(templateEngine: StencilTemplateEngine())
 router.get("/") { request, response, next in
   try response.render("Home.stencil", with: decks, forKey: "decks")
   next()
- }
+}
 
+router.get("/matiere/hello") { request, response, next in
+  response.send("hello")
+  next()
+}
 
 
 
