@@ -5,26 +5,7 @@ import HeliumLogger
 HeliumLogger.use()
 
 
-var csvPath : String = "./Sources/MRFlashcards/assets/csv"
-var subjectNames : [String] = []
-var arrayOfCsvDatas : [String] = []
-func importCsvDatas(csvPath : String ) -> ([String],[String]) {
 
-// csv Folder est un tableau avec les noms des fichiers en string
-var csvFolder : [String]? = try? FileManager.default.contentsOfDirectory(atPath: csvPath)
-//On boucle sur le dossier de csv pour avoir les noms des matieres et leurs chemins
-for csv in csvFolder ?? ["No subject created.csv"] {
-  var subject : String = csv.replacingOccurrences(of: ".csv", with: "")
-  subjectNames.append(subject)
-  var csvData : String? = try? String(contentsOf : URL(fileURLWithPath: csvPath + "/" + csv))
-  arrayOfCsvDatas.append(csvData ?? "No question created; No response created")
-}
-print(subjectNames)
-print(arrayOfCsvDatas)
-return (subjectNames,arrayOfCsvDatas)
-}
-
-importCsvDatas(csvPath : csvPath)
 
 
 

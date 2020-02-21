@@ -4,19 +4,47 @@ import Foundation
 
 //une classe pour chaque matiere/ deck
 class MRSubject {
+    var csvFolderPath : String = "./Sources/MRFlashcards/assets/csv"
     var deck : [MRCard] 
+    var subjectNames : [String]
+    var arrayOfCsvDatas : [String]
 
 //on cree le constructeur de la classe
     init() {
+        self.csvFolderPath = "./Sources/MRFlashcards/assets/csv"
         self.deck = []
+        self.subjectNames = []
+        self.arrayOfCsvDatas = []
     }
 
 
 
 
 
+func importCsvDatas(csvFolderPath : String ) -> ([String],[String]) {
+
+// csv Folder est un tableau avec les noms des fichiers en string
+var csvFolder : [String]? = try? FileManager.default.contentsOfDirectory(atPath: csvFolderPath)
+//On boucle sur le dossier de csv pour avoir les noms des matieres et leurs chemins
+for csv in csvFolder ?? ["No subject created.csv"] {
+  var subject : String = csv.replacingOccurrences(of: ".csv", with: "")
+  subjectNames.append(subject)
+  var csvData : String? = try? String(contentsOf : URL(fileURLWithPath: csvFolderPath + "/" + csv))
+  arrayOfCsvDatas.append(csvData ?? "No question created; No response created")
+}
+print(subjectNames)
+print(arrayOfCsvDatas)
+return (subjectNames,arrayOfCsvDatas)
+}
+
+
+
+
 // La fonction principale a utiliser pour obtenir un deck a partir d'une string de csv
     func createDeckFromCsv(stringToConvert: String) -> [MRCard]{
+
+      importCsvDatas(csvFolderPath : csvFolderPath)
+
       //on decoupe le tableau en lignes avec CharacterSet.newlines car \n unix, \r mac et \r \n windows
       var lines: [String] = stringToConvert.components(separatedBy : CharacterSet.newlines)
       //filtrer le tableau en supprimant les string vide ""
