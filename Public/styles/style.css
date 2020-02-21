@@ -7,15 +7,20 @@ body {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
-.decks_board {
-    width:100%;
-    height:100vh;
+header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
+}
+footer{
+    padding: 15px;
 }
 H1,H2,H3 {
     font-family: "Titles-Bold";
@@ -66,9 +71,16 @@ H1,H2,H3 {
     margin: 1vw;
 }
 
-@media screen and (max-width :768px){
-    .decks {
-        width: 100%;
+@media (max-width: 768px){
+    .deck {
+        width: calc(100% / 3);
+        margin: 1.5vw;
 
+    }
+}
+@media (max-width: 430px){
+    .deck {
+        width: 80%;
+        margin: 2vw;
     }
 }

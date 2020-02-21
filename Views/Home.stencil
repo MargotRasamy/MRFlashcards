@@ -4,18 +4,21 @@
     <link href="/styles/style.css" rel="stylesheet">
     </head>
     <body>
-    <section class="decks_board">
+        <header>
 
-        <h1>Bienvenue sur Flashcards !</h1>
-        <h3> Choisis la matiere que tu veux reviser</h3>
+            <h1>Bienvenue sur Flashcards !</h1>
+            <h3> Choisis la matiere que tu veux reviser</h3>
+        </header>
 
-     <div class="decks">
-         {% for deck in decks %}
-            <div class="deck">{{deck.subjectName}} </div>
-        {% endfor %}
-    </div>
+        <div class="decks">
+            {% for deck in decks %}
+                <div class="deck">{{deck.subjectName}} </div>
+            {% endfor %}
+        </div>
         
 
-    </section>
+        <footer>
+        © Margot Rasamy - 2020
+        </footer>
     </body>
 </html>
