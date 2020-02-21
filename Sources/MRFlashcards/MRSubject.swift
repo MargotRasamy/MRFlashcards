@@ -37,8 +37,10 @@ func createDecksFromCsv(csvFolderPath : String) -> [MRSubjectDeck] {
   //On boucle sur le dossier de csv pour avoir les noms des matieres et leurs chemins
   
 for csv in csvFolder ?? ["No subject created yet"]{
+  
   var subject : String = csv.replacingOccurrences(of: ".csv", with: "")
   subjectNames.append(subject)
+
   var csvData : String? = try? String(contentsOf : URL(fileURLWithPath: csvFolderPath + "/" + csv))
   arrayOfCsvDatas.append(csvData ?? "No question created; No response created")
 
@@ -74,14 +76,12 @@ print(arrayOfCsvDatas) //we have ["questojorjgtr", " questions.."]
 
 
 
-
-
       var temoin : Bool = false
       var card = MRCard(questionRecto : "", responseVerso : "")
       var deckCards : [MRCard] = []
-    for deck in arrayOfDecksOfCards {
+    for indexOfDecks in 0..<arrayOfDecksOfCards.count {
 
-      for cardPair in deck  { // csvConverted c [[String]] ou ss
+      for cardPair in arrayOfDecksOfCards[indexOfDecks]  { // csvConverted c [[String]] ou ss
           for cardSide in cardPair {
 
             if temoin == false {
@@ -96,7 +96,8 @@ print(arrayOfCsvDatas) //we have ["questojorjgtr", " questions.."]
 
           }
       }  
-      newDeck.subjectName = "hello"
+      
+      newDeck.subjectName = subjectNames[indexOfDecks]
       newDeck.deck = deckCards
       allDecks.append(newDeck)
 

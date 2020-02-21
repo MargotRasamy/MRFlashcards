@@ -13,3 +13,5 @@ v1.5 reducing fonctions code, Csv can be turned into decks
 
 v1.8 all decks done (except name)
 v1.10 back up version - almost fully working
+
+v1.11 back up version - almost fully working
