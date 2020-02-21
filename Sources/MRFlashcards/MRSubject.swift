@@ -7,7 +7,6 @@ class MRSubject {
     var csvFolderPath : String = "./Sources/MRFlashcards/assets/csv"
     var allDecks : [MRSubjectDeck] 
     // var deck : [MRCard]
-    var subjectNames : [String]
     var arrayOfCsvDatas : [String]
 
 //on cree le constructeur de la classe
@@ -15,7 +14,7 @@ class MRSubject {
         self.csvFolderPath = "./Sources/MRFlashcards/assets/csv"
         self.allDecks = []
         // self.deck = []
-        self.subjectNames = []
+      
         self.arrayOfCsvDatas = []
     }
 
@@ -29,6 +28,7 @@ class MRSubject {
 
 //une fonction qui prend en parametre le path du folder de csv et retourne les decks
 func createDecksFromCsv(csvFolderPath : String) -> [MRSubjectDeck] {
+  var subjectNames : [String] = []
 
   var newDeck = MRSubjectDeck(subjectName : "", deck: [])
 
@@ -76,11 +76,11 @@ print(arrayOfCsvDatas) //we have ["questojorjgtr", " questions.."]
 
 
 
-      var temoin : Bool = false
-      var card = MRCard(questionRecto : "", responseVerso : "")
-      var deckCards : [MRCard] = []
     for indexOfDecks in 0..<arrayOfDecksOfCards.count {
 
+      var card = MRCard(questionRecto : "", responseVerso : "")
+      var deckCards : [MRCard] = [] //Never move variables for nothing
+      var temoin : Bool = false
       for cardPair in arrayOfDecksOfCards[indexOfDecks]  { // csvConverted c [[String]] ou ss
           for cardSide in cardPair {
 
@@ -95,7 +95,7 @@ print(arrayOfCsvDatas) //we have ["questojorjgtr", " questions.."]
             }
 
           }
-      }  
+      }
       
       newDeck.subjectName = subjectNames[indexOfDecks]
       newDeck.deck = deckCards

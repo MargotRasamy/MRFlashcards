@@ -15,3 +15,5 @@ v1.8 all decks done (except name)
 v1.10 back up version - almost fully working
 
 v1.11 back up version - almost fully working
+
+v1.12 back up in case - completely working and code ready to be cleaned up
