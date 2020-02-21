@@ -5,15 +5,9 @@ import HeliumLogger
 HeliumLogger.use()
 
 
-  let nouveauxQuiz = MRFlashcardsGame()
-  nouveauxQuiz.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv")
-print(nouveauxQuiz.allDecks)
-
-//STEP 1
-
-
-
-
+let newFlashcardsGame = MRFlashcardsGame()
+newFlashcardsGame.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv")
+print(newFlashcardsGame.allDecks)
 
 
 
@@ -22,18 +16,13 @@ router.all(middleware: [BodyParser(), StaticFileServer(path: "./Public")])
 router.add(templateEngine: StencilTemplateEngine())
 
 
-
- router.get("/") { request, response, next in
-    response.send(nouveauxQuiz.allDecks)
-     
-       
-
-
-     
-     next()
+router.get("/") { request, response, next in
+    
+  var hello : String = ""
+  // response.send(newFlashcardsGame.allDecks)
+  try response.render("Home.stencil", context: [ hello  : ""])
+  next()
  }
-
-
 
 
  Kitura.addHTTPServer(onPort: 8080, with: router)
