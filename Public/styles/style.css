@@ -69,6 +69,7 @@ H1,H2,H3 {
     background:  linear-gradient(#e66465, #9198e5);
     border-radius: 15px;
     margin: 1vw;
+    cursor: pointer;
 }
 
 @media (max-width: 768px){

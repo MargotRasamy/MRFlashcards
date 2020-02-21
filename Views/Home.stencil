@@ -20,5 +20,6 @@
         <footer>
         © Margot Rasamy - 2020
         </footer>
+        <script type="text/javascript" src="/scripts/script.js"></script>
     </body>
 </html>
