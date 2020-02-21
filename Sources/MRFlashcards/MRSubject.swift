@@ -14,6 +14,7 @@ class MRSubject {
 
 
 
+
 // La fonction principale a utiliser pour obtenir un deck a partir d'une string de csv
     func createDeckFromCsv(stringToConvert: String) -> [MRCard]{
       //on decoupe le tableau en lignes avec CharacterSet.newlines car \n unix, \r mac et \r \n windows
