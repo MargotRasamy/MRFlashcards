@@ -18,14 +18,15 @@ router.add(templateEngine: StencilTemplateEngine())
 
 
 router.get("/") { request, response, next in
-  try response.render("Home.stencil", with: decks, forKey: "decks")
+  try response.render("Home.stencil", with: decks, forKey: "allDecks")
   next()
 }
 
 
 
-router.get("/matiere/Matiere1") { request, response, next in
-  response.send("Matiere 1")
+router.get("/matiere/:NomDeLaMatiere") { request, response, next in
+  let subjectDeckName : String? = request.parameters["NomDeLaMatiere"]
+  try response.render("Deck.stencil", with: decks, forKey: "allDecks")
   next()
 }
 

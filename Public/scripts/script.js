@@ -9,7 +9,7 @@ decks[i].addEventListener(
     'click',
     function(){
         subjectName = decks[i].innerHTML
-        subjectNameTrimed = subjectName.replace(/\s/g,'')
+        subjectNameTrimed = subjectName.replace(/\s/gi,'')
         window.location.href="/matiere/" + subjectNameTrimed
     }
 )

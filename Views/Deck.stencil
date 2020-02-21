@@ -6,13 +6,15 @@
     <body>
         <header>
 
-            <h1>Bienvenue sur Flashcards !</h1>
-            <h3> Choisis la matiere que tu veux reviser</h3>
+            <h1>Flashcard</h1>
+            <h3> As-tu bien revise ?</h3>
         </header>
 
-        <div class="decks">
-            {% for deck in allDecks %}
-                <div class="deck">{{deck.subjectName}} </div>
+        <div class="subject">
+            {% for i in allDecks %}
+               {% for j in i.deck %}
+                <div class="cards">{{j.questionRecto}} </div>
+                {% endfor %}
             {% endfor %}
         </div>
         
