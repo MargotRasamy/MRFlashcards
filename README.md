@@ -17,3 +17,5 @@ v1.10 back up version - almost fully working
 v1.11 back up version - almost fully working
 
 v1.12 back up in case - completely working and code ready to be cleaned up
+
+v1.13 Code beautified and functionnal - Ready for Stencil/JS/CSS

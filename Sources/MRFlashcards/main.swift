@@ -5,7 +5,7 @@ import HeliumLogger
 HeliumLogger.use()
 
 
-  let nouveauxQuiz = MRSubject()
+  let nouveauxQuiz = MRFlashcardsGame()
   nouveauxQuiz.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv")
 print(nouveauxQuiz.allDecks)
 
