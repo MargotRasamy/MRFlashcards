@@ -1,8 +1,15 @@
-let deck = document.querySelector('.deck')
+let decks = document.querySelectorAll('.deck')
+var subjectName
+var subjectNameTrimed // No white space for path
 
-deck.addEventListener(
+
+for(let i = 0; i<decks.length ; i++)
+decks[i].addEventListener(
+    
     'click',
     function(){
-        window.location.href="/matiere/hello"
+        subjectName = decks[i].innerHTML
+        subjectNameTrimed = subjectName.replace(/\s/g,'')
+        window.location.href="/matiere/" + subjectNameTrimed
     }
 )

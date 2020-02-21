@@ -22,8 +22,10 @@ router.get("/") { request, response, next in
   next()
 }
 
-router.get("/matiere/hello") { request, response, next in
-  response.send("hello")
+
+
+router.get("/matiere/Matiere1") { request, response, next in
+  response.send("Matiere 1")
   next()
 }
 
