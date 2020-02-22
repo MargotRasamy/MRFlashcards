@@ -85,3 +85,36 @@ H1,H2,H3 {
         margin: 2vw;
     }
 }
+
+.subject {
+    display: flex;
+    justify-content: space-around;
+
+    
+}
+.cardsColumn {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+}
+.card {
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 2vw;
+    cursor: pointer;
+}
+.cardQuestion {
+    background:  linear-gradient(#da7c9b, #fad4e9);
+}
+.cardResponse {
+    background:  linear-gradient(#7cb4da, #d4ebfa);
+}
+
+.is-hidden{
+    visibility: hidden;
+}

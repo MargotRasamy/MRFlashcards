@@ -11,8 +11,8 @@
         </header>
 
         <div class="decks">
-            {% for deck in allDecks %}
-                <div class="deck">{{deck.subjectName}} </div>
+            {% for eachDeck in allDecks %}
+                <div class="deck">{{eachDeck.subjectName}} </div>
             {% endfor %}
         </div>
         
