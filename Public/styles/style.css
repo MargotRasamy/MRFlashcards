@@ -97,6 +97,7 @@ H1,H2,H3 {
     flex-direction: column;
     height: auto;
     flex-wrap: wrap;
+    width:100%;
 }
 .card {
     height: 100px;

@@ -6,8 +6,8 @@ HeliumLogger.use()
 
 
 let newFlashcardsGame = MRFlashcardsGame()
-newFlashcardsGame.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv")
-print(newFlashcardsGame.allDecks)
+newFlashcardsGame.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv") //Si lien errone, le nil a ete gere => a tester !
+
 let decks = newFlashcardsGame.allDecks 
 
 
@@ -26,7 +26,16 @@ router.get("/") { request, response, next in
 
 router.get("/matiere/:NomDeLaMatiere") { request, response, next in
   let subjectDeckName : String? = request.parameters["NomDeLaMatiere"]
-  try response.render("Deck.stencil", with: decks, forKey: "allDecks")
+  for(i, matiere) in newFlashcardsGame.allDecks.enumerated() {
+ 
+      // print(matiere.subjectName)
+    
+    if matiere.subjectName == "Matiere1" {
+
+    try response.render("Deck.stencil", with: matiere.deck, forKey: "matiereTable")
+    }
+  }
+
   next()
 }
 
