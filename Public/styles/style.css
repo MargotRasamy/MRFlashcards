@@ -21,6 +21,7 @@ header {
 }
 footer{
     padding: 15px;
+
 }
 H1,H2,H3 {
     font-family: "Titles-Bold";
@@ -89,7 +90,8 @@ H1,H2,H3 {
 .subject {
     display: flex;
     justify-content: space-around;
-
+    align-items: center;
+    width:100%;
     
 }
 .cardsColumn {
@@ -97,7 +99,6 @@ H1,H2,H3 {
     flex-direction: column;
     height: auto;
     flex-wrap: wrap;
-    width:100%;
 }
 .card {
     height: 100px;

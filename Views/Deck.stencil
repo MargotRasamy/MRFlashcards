@@ -15,11 +15,12 @@
                 {% for card in matiereTable %}
                     <div class="card cardQuestion">{{card.questionRecto}} </div>
                 {% endfor %}
+            </div>
         </div>
         
 
         <footer>
-        © Margot Rasamy - 2020
+            © Margot Rasamy - 2020
         </footer>
         <script type="text/javascript" src="/scripts/script.js"></script>
     </body>
