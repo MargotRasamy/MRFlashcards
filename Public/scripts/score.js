@@ -15,7 +15,7 @@ submitButton.addEventListener(
             }
         }
         scoreCount = (rightAnswersCount / checkboxes.length) * 100
-        scoreDisplay.innerHTML = `Ton score est de ${scoreCount}%, soit ${rightAnswersCount}/${checkboxes.length}`
+        scoreDisplay.innerHTML = `Ton score est de ${scoreCount}%, soit ${rightAnswersCount}/${checkboxes.length} !`
     }
 )
 

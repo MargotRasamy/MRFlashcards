@@ -23,7 +23,7 @@ footer{
     padding: 15px;
 
 }
-H1,H2,H3 {
+H1,H2,H3,H4,H5 {
     font-family: "Titles-Bold";
     text-align: center;
 }
@@ -101,7 +101,27 @@ H1,H2,H3 {
     flex-wrap: wrap;
 }
 .card {
-    height: 100px;
+    height: 90px;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 2vw;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px rgb(24, 24, 24);
+    text-align: center;
+}
+.cardQuestion {
+    background:  linear-gradient(#5192c7, #91c2da);
+}
+.cardResponse {
+    background:  linear-gradient(#c75151, #df9caa);
+}
+
+.checkboxField{
+    height: 130px;
     width: 200px;
     display: flex;
     justify-content: center;
@@ -109,18 +129,33 @@ H1,H2,H3 {
     border-radius: 15px;
     margin: 2vw;
     cursor: pointer;
-}
-.cardQuestion {
-    background:  linear-gradient(#da7c9b, #fad4e9);
-}
-.cardResponse {
-    background:  linear-gradient(#7cb4da, #d4ebfa);
-}
-
-.checkboxField{
     background-color: rgba(100, 100, 100, 0.048);
 }
 
 .is-hidden{
     visibility: hidden;
+}
+#submit-button{
+    background: linear-gradient(#73bb9a, #afebd4);
+    color: black;
+    font-weight: bold;
+    font-family: 'Titles-Bold';
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    padding: 20px;
+    font-family: 'Titles-Bold';
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+#submit-button:active{
+    background: lightslategray;
+    color: white;
+    
+}
+#score {
+    padding: 5vw;
+    font-size: 1.5em;
 }

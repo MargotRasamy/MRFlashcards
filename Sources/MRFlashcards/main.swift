@@ -35,10 +35,9 @@ router.get("/matiere/:subjectDeckNameInPath") { request, response, next in
   //Boucle pour rendre les bonnes cartes selon le sujet en recuperant le nom de la matiere de la route
   for(i, subjectList) in newFlashcardsGame.allDecks.enumerated() {
     if subjectList.subjectName == subjectDeckNameTrimed ?? "No subject" {
-    try response.render("Deck.stencil", with: subjectList.deck, forKey: "cardsList")
+    try response.render("Deck.stencil", with: subjectList, forKey: "subjectList")
     }
   }
-
   next()
 }
 
