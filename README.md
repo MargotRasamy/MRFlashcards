@@ -28,3 +28,5 @@ v1.18 FlashcardsGame completely working and routes handled - Missing score in JS
 v1.19 Version fully functionnal + score in JS calculated and displayed
 
 v1.20 Last version completely done !
+
+v1.21 Flashcards Game done ! - Latest release
