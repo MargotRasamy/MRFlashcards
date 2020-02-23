@@ -117,6 +117,10 @@ H1,H2,H3 {
     background:  linear-gradient(#7cb4da, #d4ebfa);
 }
 
+.checkboxField{
+    background-color: rgba(100, 100, 100, 0.048);
+}
+
 .is-hidden{
     visibility: hidden;
 }

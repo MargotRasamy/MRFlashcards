@@ -13,16 +13,20 @@
         <div class="subject">
             <div class="cardsColumn">
                 {% for card in cardsList %}
-                    <div class="card cardQuestion">{{card.questionRecto}} </div>
+                    <label class="card cardQuestion">{{card.questionRecto}} </label>
                 {% endfor %}
             </div>
             <div class="cardsColumn">
                 {% for card in cardsList %}
-                    <div class="card cardResponse is-hidden">{{card.responseVerso}} </div>
+                    <label class="card cardResponse is-hidden">{{card.responseVerso}} </label>
                 {% endfor %}
             </div>
             <div class="cardsColumn">
-                <button 
+                {% for card in cardsList %}
+                    <div class="card checkboxField">
+                        <input type="checkbox" />
+                    </div>
+                {% endfor %}
             </div>
         </div>
         
