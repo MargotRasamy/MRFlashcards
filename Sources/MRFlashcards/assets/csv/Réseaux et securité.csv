@@ -1,0 +1,9 @@
+Parmi les protocoles suivants , lequel n'est pas de niveau 2 du modéle OSI ?;IPsec
+Parmi les propositions suivantes, laquelle correspond à des techniques de communication permettant d'accéder à Internet  ?;RNIS
+Quel protocole n'est pas qualifié pour la Voix Ip ?;Frame Relay
+Lequel des énoncés suivants décrit le mieux une attaque Smurf ?;Des pings requests sont envoyés vers l'adresse de broadcast d'un sous-réseau, de telle sorte que des équipements de ce sous-réseau envoient des réponses ping à un système cible.
+Quelle est la différence entre les techniques NAT et PAT ?;Le PAT utilise des numéros de port source uniques afin de distinguer les traductions.
+Quand un serveur DNS accepte et utilise des informations incorrectes à partir d'un hôte qui n'a pas le droit de donner cette information, il s'agit d'un...;DNS spoofing
+Qu'est-ce qu'un extranet ?;Un site Intranet privé mais accessible avec un mot de passe
+Quelle méthode d'accès n'est pas une méthode d'accès réseau utilisée par les réseaux mobiles ?;CSMA
+Quel est le nom d'un groupe d'ordinateurs qui ont été compromis et sont contrôlés par un tiers ?;Botnet
