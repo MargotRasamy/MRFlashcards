@@ -12,12 +12,12 @@
 
         <div class="subject">
             <div class="cardsColumn">
-                {% for card in matiereTable %}
+                {% for card in cardsList %}
                     <div class="card cardQuestion">{{card.questionRecto}} </div>
                 {% endfor %}
             </div>
             <div class="cardsColumn">
-                {% for card in matiereTable %}
+                {% for card in cardsList %}
                     <div class="card cardResponse is-hidden">{{card.responseVerso}} </div>
                 {% endfor %}
             </div>
