@@ -24,15 +24,15 @@ router.get("/") { request, response, next in
 
 
 
-router.get("/matiere/:NomDeLaMatiere") { request, response, next in
-  let subjectDeckName : String? = request.parameters["NomDeLaMatiere"]
+router.get("/matiere/:subjectDeckNameInPath") { request, response, next in
+  let subjectDeckName : String? = request.parameters["subjectDeckNameInPath"]
 
   //Passer de "nom_du_sujet_" dans le chemin a "nom du sujet"
   var subjectDeckNameTrimed : String? = subjectDeckName?.replacingOccurrences(of: "_", 
   with: " ")
   subjectDeckNameTrimed = subjectDeckNameTrimed?.trimmingCharacters(in: .whitespacesAndNewlines)
 
-
+  //Boucle pour rendre les bonnes cartes selon le sujet en recuperant le nom de la matiere de la route
   for(i, subjectList) in newFlashcardsGame.allDecks.enumerated() {
     if subjectList.subjectName == subjectDeckNameTrimed ?? "No subject" {
     try response.render("Deck.stencil", with: subjectList.deck, forKey: "cardsList")

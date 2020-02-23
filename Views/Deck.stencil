@@ -21,6 +21,9 @@
                     <div class="card cardResponse is-hidden">{{card.responseVerso}} </div>
                 {% endfor %}
             </div>
+            <div class="cardsColumn">
+                <button 
+            </div>
         </div>
         
 
@@ -28,5 +31,6 @@
             © Margot Rasamy - 2020
         </footer>
         <script type="text/javascript" src="/scripts/script.js"></script>
+         <script type="text/javascript" src="/scripts/score.js"></script>
     </body>
 </html>
