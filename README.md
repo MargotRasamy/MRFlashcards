@@ -24,3 +24,5 @@ v1.14 Code beautified and functionnal - Ready for Stencil/JS/CSS 2
 v1.16 Routes working, and stencil delivering
 
 v1.18 FlashcardsGame completely working and routes handled - Missing score in JS
+
+v1.19 Version fully functionnal + score in JS calculated and displayed

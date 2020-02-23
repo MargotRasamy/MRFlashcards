@@ -10,25 +10,31 @@
             <h3> As-tu bien revise ?</h3>
         </header>
 
-        <div class="subject">
+        <section class="subject">
             <div class="cardsColumn">
                 {% for card in cardsList %}
-                    <label class="card cardQuestion">{{card.questionRecto}} </label>
+                    <div class="card cardQuestion" >{{card.questionRecto}} </div>
                 {% endfor %}
             </div>
             <div class="cardsColumn">
                 {% for card in cardsList %}
-                    <label class="card cardResponse is-hidden">{{card.responseVerso}} </label>
+                    <div class="card cardResponse is-hidden">{{card.responseVerso}} </div>
                 {% endfor %}
             </div>
             <div class="cardsColumn">
                 {% for card in cardsList %}
-                    <div class="card checkboxField">
-                        <input type="checkbox" />
-                    </div>
+                    <label for="{{card.questionRecto}}" class="card checkboxField">
+                        <input type="checkbox" id="{{card.questionRecto}}"/>
+                    </label>
                 {% endfor %}
             </div>
-        </div>
+            <button type="submit">Envoyer les reponses</button>
+        </section>
+        
+        <section id="score">
+        
+        </section>
+
         
 
         <footer>
