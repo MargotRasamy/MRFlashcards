@@ -61,7 +61,7 @@ H1,H2,H3,H4,H5 {
     /* font-size: 2.5rem; */
 }
 .deck {
-    
+    box-shadow: 3px 3px 3px rgb(24, 24, 24);
     width: calc(100vw / 5);
     display: flex;
     justify-content: center;
