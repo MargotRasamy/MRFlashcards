@@ -4,7 +4,7 @@
     <link href="/styles/style.css" rel="stylesheet">
     </head>
     <body>
-        <a class="back-link" href="../../">Retour à la liste des matière</a>
+        <a class="back-link" href="../../">Retour à la liste des matières</a>
         <header>
 
             <h1>{{subjectList.subjectName}}</h1>
