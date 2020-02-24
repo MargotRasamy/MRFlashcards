@@ -24,9 +24,11 @@
             </div>
             <div class="cardsColumn">
                 {% for card in subjectList.deck %}
-                    <label for="{{card.questionRecto}}" class="checkboxField">
+                    <div class="checkboxField">
+                    <label for="{{card.questionRecto}}">
                         <input type="checkbox" id="{{card.questionRecto}}"/>
                     </label>
+                    </div>
                 {% endfor %}
             </div>
         </section>

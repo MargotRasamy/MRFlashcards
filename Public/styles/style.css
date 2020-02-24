@@ -128,8 +128,11 @@ H1,H2,H3,H4,H5 {
     align-items: center;
     border-radius: 15px;
     margin: 2vw;
-    cursor: pointer;
     background-color: rgba(100, 100, 100, 0.048);
+}
+
+.checkboxField label input{
+    cursor: pointer;
 }
 
 .is-hidden{
