@@ -4,10 +4,9 @@ import Foundation
 import HeliumLogger
 HeliumLogger.use()
 
-
+//Start a new flashcards board
 let newFlashcardsGame = MRFlashcardsGame()
 newFlashcardsGame.createDecksFromCsv(csvFolderPath : "./Sources/MRFlashcards/assets/csv") //Si lien errone, le nil a ete gere => a tester !
-
 let decks = newFlashcardsGame.allDecks 
 
 

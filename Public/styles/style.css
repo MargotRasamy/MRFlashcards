@@ -176,3 +176,17 @@ input[type='checkbox'] {
 input[type='checkbox']:checked {
     background: linear-gradient(#397c4a, #afebd4);
 }
+
+.back-link{
+    color: rgb(26, 26, 26);
+    font-family: "Titles-Bold";
+    padding: 8px;
+    border-radius: 10px;
+    background: linear-gradient(#f1f1f1, #e9e2e2);
+    display:flex;
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+}

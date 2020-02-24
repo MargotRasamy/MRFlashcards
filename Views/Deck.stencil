@@ -4,6 +4,7 @@
     <link href="/styles/style.css" rel="stylesheet">
     </head>
     <body>
+        <a class="back-link" href="../../">Retour à la liste des matière</a>
         <header>
 
             <h1>{{subjectList.subjectName}}</h1>
@@ -34,13 +35,13 @@
         </section>
         
         
-        <button type="submit" id="submit-button">Envoyer les reponses</button>
+        <button type="submit" id="submit-button">J'envoie mes réponses</button>
         
         <section id="score">
         
         </section>
 
-        
+        <a class="back-link" href="../../">Retour à la liste des matière</a>
 
         <footer>
             © Margot Rasamy - 2020
