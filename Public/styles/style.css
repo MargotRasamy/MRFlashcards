@@ -52,7 +52,7 @@ H1,H2,H3,H4,H5 {
 }
 
 .decks {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
@@ -62,7 +62,7 @@ H1,H2,H3,H4,H5 {
 }
 .deck {
     
-    width: calc(100% / 5);
+    width: calc(100vw / 5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,3 +162,14 @@ H1,H2,H3,H4,H5 {
 
 /* checkbox style */
 
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+input[type='checkbox']:checked {
+    background: linear-gradient(#397c4a, #afebd4);
+}
